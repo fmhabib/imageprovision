@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import InputBox from "./input";
 import Modal from './modal';
 import Button from "./button";
@@ -16,7 +16,6 @@ interface IContactForm {
 const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
     const [showPopup, setShowPopup] = useState(false);
     const [errors, setErrors] = useState<Partial<IContactForm>>({});
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
     const [formData, setFormData] = useState<IContactForm>({
         name: "",
         organisationName: "",
@@ -81,9 +80,11 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
         }
     };
 
-    function onChange(value: React.ChangeEvent<ReCAPTCHA>) {
-        console.log("Captcha value:", value);
+
+    function onChange(token: string | null) {
+        console.log("Captcha token:", token);
     }
+
 
     const validateForm = () => {
         let isValid = true;
@@ -118,16 +119,6 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
         return isValid;
     };
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 600);
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [])
 
     return (
         <div className="w-full font-montserrat overflow-hidden">
