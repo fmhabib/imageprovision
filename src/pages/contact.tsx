@@ -27,7 +27,7 @@ const Contact = () => {
         show: true,
         first: true
     }, {
-        title: "How does image processing work?hat is ImageProVision ?",
+        title: "How does image processing work?",
         content: "ImageProVision Technology Pvt. Ltd is a company that processes and analyses images with the help of image processing applications.",
         show: false,
         first: false
