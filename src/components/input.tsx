@@ -16,7 +16,7 @@ const Input = ({ name, textarea, handleChange, type, placeholder, value, error, 
                 <textarea
                     id={name}
                     name={name}
-                    value={value}
+                    value={value || ""}
                     onChange={handleChange}
                     className={`block min-h-[90px] py-2.5 px-0 w-full ${bgWhite ? "placeholder-black" : "placeholder-white"} text-base ${bgWhite ? "text-black" : "text-white"} bg-transparent border-0 border-b-2 border-[rgb(116,62,180)]/50 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer`}
                     required
@@ -27,7 +27,7 @@ const Input = ({ name, textarea, handleChange, type, placeholder, value, error, 
                     type={type}
                     id={name}
                     name={name}
-                    value={value}
+                    value={value || ""}
                     onChange={handleChange}
                     autoComplete="off"
                     className={`block py-0 px-0 w-full text-base md:text-lg ${bgWhite ? "placeholder-black" : "placeholder-white"} sm:text-base ${bgWhite ? "text-black" : "text-white"} bg-transparent border-0 border-b-2 border-[rgb(116,62,180)]/50 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer`}

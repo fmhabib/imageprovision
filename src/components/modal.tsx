@@ -25,7 +25,7 @@ const Modal = ({ onCancel, btnText, content }: props) => {
 
 
     return (
-        <div className="modal-overlay fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+        <div className="modal-overlay fixed top-0 left-0 max-[500px]:px-4 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
             <div className="relative p-4 w-full max-w-md bg-white rounded-lg shadow-sm">
                 <div className="relative p-4 text-center">
                     <button
