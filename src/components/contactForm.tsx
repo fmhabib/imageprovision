@@ -10,6 +10,7 @@ interface IContactForm {
     email: string;
     phone: string;
     message: string;
+    token: string;
     [key: string]: string;
 }
 
@@ -21,7 +22,8 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
         organisationName: "",
         email: "",
         phone: "",
-        message: ""
+        message: "",
+        token: ""
     });
 
     const handleCancel = () => {
@@ -82,6 +84,7 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
 
 
     function onChange(token: string | null) {
+        setFormData({ ...formData, token })
         console.log("Captcha token:", token);
     }
 
@@ -113,6 +116,11 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
         if (!formData.message) {
             isValid = false;
             newErrors.message = "Please enter your message";
+        }
+
+        if (!formData.token) {
+            isValid = false;
+            newErrors.token = "Please complete recaptcha";
         }
 
         setErrors(newErrors);
