@@ -82,11 +82,13 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
         }
     };
 
-
     function onChange(token: string | null) {
-        setFormData({ ...formData, token })
-        console.log("Captcha token:", token);
+        setFormData({
+            ...formData,
+            token: token !== null ? token : ''
+        });
     }
+
 
 
     const validateForm = () => {
