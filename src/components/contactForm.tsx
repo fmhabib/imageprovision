@@ -141,7 +141,7 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
                 />
             )}
 
-            <div className="relative grid md:grid-cols-2 gap-12">
+            <div className="relative grid md:grid-cols-2 gap-8">
                 {inputData.map((item, index) => (
                     <InputBox
                         key={index}
@@ -156,17 +156,18 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
                 ))}
             </div>
 
-            <InputBox
-                name={message.name}
-                placeholder={message.placeholder}
-                type={message.type}
-                textarea={message.textarea}
-                value={formData[message.name] || ""}
-                handleChange={handleChange}
-                error={errors[message.name] || ""}
-                bgWhite={bgWhite}
+            <div className="pt-4">
+                <InputBox
+                    name={message.name}
+                    placeholder={message.placeholder}
+                    type={message.type}
+                    textarea={message.textarea}
+                    value={formData[message.name] || ""}
+                    handleChange={handleChange}
+                    error={errors[message.name] || ""}
+                    bgWhite={bgWhite}
 
-            />
+                /></div>
 
             <div className="pt-4 pb-6">
                 <ReCAPTCHA sitekey={"6Le_bcYpAAAAAMuRtrHpzR1bSNMsBbER9_MF4k9N"} onChange={handleCaptcha} />

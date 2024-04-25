@@ -18,7 +18,7 @@ const Input = ({ name, textarea, handleChange, type, placeholder, value, error, 
                     name={name}
                     value={value}
                     onChange={handleChange}
-                    className={`block min-h-[100px] py-2.5 px-0 w-full ${bgWhite ? "placeholder-black" : "placeholder-white"} text-base ${bgWhite ? "text-black" : "text-white"} bg-transparent border-0 border-b-2 border-[rgb(116,62,180)]/50 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer`}
+                    className={`block min-h-[90px] py-2.5 px-0 w-full ${bgWhite ? "placeholder-black" : "placeholder-white"} text-base ${bgWhite ? "text-black" : "text-white"} bg-transparent border-0 border-b-2 border-[rgb(116,62,180)]/50 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer`}
                     required
                     placeholder={placeholder}
                 />
