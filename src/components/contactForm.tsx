@@ -168,7 +168,7 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
             />
 
             <div className="pt-4 pb-6">
-                <ReCAPTCHA sitekey={"6LcFeMUpAAAAAPrSvWuksupCjY7AlFBuyVKaooEG"} onChange={onChange} />
+                <ReCAPTCHA sitekey={"6Le_bcYpAAAAAMuRtrHpzR1bSNMsBbER9_MF4k9N"} onChange={onChange} />
             </div>
 
             <Button text={"Submit"} onClick={onSubmit} />
