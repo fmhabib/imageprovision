@@ -132,7 +132,7 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
 
     return (
         <div className="w-full font-montserrat overflow-hidden">
-            {!showPopup && (
+            {showPopup && (
                 <Modal
                     onCancel={handleCancel}
                     title="Form Submitted Successfully!"
