@@ -122,7 +122,7 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
 
         if (!formData.token) {
             isValid = false;
-            newErrors.token = "Please complete recaptcha";
+            newErrors.captcha = "Please complete the captcha";
         }
 
         setErrors(newErrors);
@@ -171,6 +171,8 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
 
             <div className="pt-4 pb-6">
                 <ReCAPTCHA sitekey={"6Le_bcYpAAAAAMuRtrHpzR1bSNMsBbER9_MF4k9N"} onChange={handleCaptcha} />
+                {errors?.captcha && <p className="absolute mt-1 text-xs text-red-500">{errors?.captcha}</p>}
+
             </div>
 
             <Button text={"Submit"} onClick={onSubmit} />
