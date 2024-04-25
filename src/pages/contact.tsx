@@ -57,7 +57,7 @@ const Contact = () => {
 
     return (
         <div className="w-full h-full overflow-hidden">
-            <div className="bg-[#1E053C] py-20 w-full">
+            <div className="bg-[#1E053C] pt-20 pb-12 min-[900px]:py-20 w-full">
                 <div className="absolute top-28 z-0 w-full h-[700px] bg-[url('/global.png')] bg-no-repeat bg-cover bg-left-top" style={{ opacity: 0.02 }}></div>
                 <div className="max-w-[1100px] mx-auto max-[900px]:px-8 max-[1280px]:pr-8">
                     <div className="w-full relative">
@@ -82,20 +82,30 @@ const Contact = () => {
                                     </div>
                                 ))}
                             </div>
-                            <div className="min-[900px]:hidden flex items-center gap-4 text-sm font-semibold pb-4 pt-4">
+                            <div className="min-[900px]:hidden flex items-center gap-4 text-base font-semibold pt-4">
                                 <img src="gmap.png" alt="Google map Link" className="w-6" />
-                                <a className="cursor-pointer text-lg font-font" href="https://www.google.com/maps/place/edge+CRM/@19.212777,73.109044,15z/data=!4m6!3m5!1s0x3be7c9af72af5525:0x8b52ac04d1895c9!8m2!3d19.2127771!4d73.1090441!16s%2Fg%2F11hdvw2xr1?hl=en&entry=ttu">View on Google Map</a>
+                                <a className="cursor-pointer text-xl font-semibold" href="https://www.google.com/maps/place/edge+CRM/@19.212777,73.109044,15z/data=!4m6!3m5!1s0x3be7c9af72af5525:0x8b52ac04d1895c9!8m2!3d19.2127771!4d73.1090441!16s%2Fg%2F11hdvw2xr1?hl=en&entry=ttu">View on Google Map</a>
                             </div>
                             <div className="max-[900px]:hidden">
                                 <div className="w-[2px] h-[430px] mx-auto bg-[#EAB705] bg-opacity-40"></div>
                             </div>
-                            <div className={`${isMobile ? "px-8 pt-20 pb-16 rounded-2xl mt-12" : ''} max-[900px]:bg-white relative w-full  min-[900px]:w-[50%] h-full`}>
-                                <ContactForm bgWhite={isMobile ? true : false} />
-                            </div>
+                            {
+                                !isMobile && <div className={` max-[900px]:bg-white relative w-full  min-[900px]:w-[50%] h-full`}>
+                                    <ContactForm bgWhite={false} />
+                                </div>
+                            }
+
+
                         </div>
                     </div>
                 </div>
             </div>
+            {isMobile && <div className="min-[900px]:hidden bg-b-w-mobile w-full flex justify-center items-center px-8 mb-4">
+
+                <div className={`px-8 pt-20 pb-16 rounded-2xl shadow-xl max-[900px]:bg-white relative w-full  min-[900px]:w-[50%] h-full`}>
+                    <ContactForm bgWhite={true} />
+                </div>
+            </div>}
             <div className="max-[900px]:hidden bg-b-w w-full h-[550px] flex justify-center items-center px-8">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15070.389785170444!2d73.109044!3d19.212777!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9af72af5525%3A0x8b52ac04d1895c9!2sedge%20CRM!5e0!3m2!1sen!2sin!4v1713963191162!5m2!1sen!2sin" width="1100px" height="462" loading="lazy" className="max-[900px]:hidden rounded-xl" />
             </div>

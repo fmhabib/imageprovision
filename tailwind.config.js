@@ -10,7 +10,9 @@ export default {
         'nunito': ["Nunito Sans", "sans-serif"],
 
       },backgroundImage: {
-        "b-w" :'linear-gradient(to top, white 50%, #1E053C 50%);'
+        "b-w" :'linear-gradient(to top, white 50%, #1E053C 50%);',
+        "b-w-mobile" :'linear-gradient(to top, white 70%, #1E053C 30%);'
+
       }
     },
   },
