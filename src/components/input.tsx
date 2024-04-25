@@ -3,7 +3,7 @@ interface props {
     placeholder: string;
     type: string;
     textarea?: boolean | undefined;
-    value: string;
+    value: string | undefined;
     handleChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     error?: string;
     bgWhite?: boolean;

@@ -10,9 +10,10 @@ interface IContactForm {
     email: string;
     phone: string;
     message: string;
-    token: string;
-    [key: string]: string;
+    token?: string;
+    [key: string]: string | undefined;
 }
+
 
 const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
     const [showPopup, setShowPopup] = useState(false);
@@ -82,13 +83,12 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
         }
     };
 
-    function onChange(token: string | null) {
+    function handleCaptcha(token: string | null | undefined) {
         setFormData({
             ...formData,
-            token: token !== null ? token : ''
-        });
+            token: token !== undefined && token !== null ? token : ''
+        } as IContactForm);
     }
-
 
 
     const validateForm = () => {
@@ -161,15 +161,15 @@ const ContactForm = ({ bgWhite }: { bgWhite: boolean }) => {
                 placeholder={message.placeholder}
                 type={message.type}
                 textarea={message.textarea}
-                value={formData[message.name]}
+                value={formData[message.name] || ""}
                 handleChange={handleChange}
-                error={errors[message.name]}
+                error={errors[message.name] || ""}
                 bgWhite={bgWhite}
 
             />
 
             <div className="pt-4 pb-6">
-                <ReCAPTCHA sitekey={import.meta.env.CAPTCHA_KEY} onChange={onChange} />
+                <ReCAPTCHA sitekey={import.meta.env.CAPTCHA_KEY} onChange={handleCaptcha} />
             </div>
 
             <Button text={"Submit"} onClick={onSubmit} />
