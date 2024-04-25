@@ -17,7 +17,7 @@ const Contact = () => {
         }, {
             icon: <IoCall className="text-[#EAB705] text-2xl" />,
             title: "Contact information",
-            description: "Call : +91 82370 39001 / +91 82370 39002"
+            description: isMobile ? 'Call : +91 82370 39001 /<br/> +91 82370 39002' : 'Call : +91 82370 39001 / +91 82370 39002'
         }
     ]
 
@@ -57,8 +57,8 @@ const Contact = () => {
 
     return (
         <div className="w-full h-full overflow-hidden">
-            <div className="bg-[#1E053C] pt-20 pb-12 min-[900px]:py-20 w-full">
-                <div className="absolute top-28 z-0 w-full h-[700px] bg-[url('/global.png')] bg-no-repeat bg-cover bg-left-top" style={{ opacity: 0.02 }}></div>
+            <div className="bg-[#1E053C] pt-20 pb-16 min-[900px]:py-20 w-full">
+                <div className="absolute top-28 z-0 w-full h-[700px] bg-[url('/global.png')] bg-no-repeat bg-cover bg-right-top min-[900px]:bg-left-top" style={{ opacity: 0.02 }}></div>
                 <div className="max-w-[1100px] mx-auto max-[900px]:px-8 max-[1280px]:pr-8">
                     <div className="w-full relative">
                         <h1 className="absolute inset-0 top-6 text-transparent font-bold justify-center items-center hidden md:flex text-[140px]" style={{ WebkitTextStroke: '1px #2E0A57' }}>
@@ -71,7 +71,7 @@ const Contact = () => {
                     <div className="w-full flex justify-end">
                         <div className="w-full min-[900px]:w-[97%] relative z-10 max-[900px]:flex-col flex items-start justify-between text-white">
                             <div className="max-[900px]:w-full">
-                                <h1 className="text-3xl min-[350px]:text-4xl min-[500px]:text-5xl xl:text-[55px] font-medium xl:leading-[65px] pb-10"> Need something? <br /> The IPV Squad is <br /> here to help!! </h1>
+                                <h1 className="text-3xl min-[350px]:text-4xl min-[500px]:text-5xl xl:text-[55px] font-medium xl:leading-[65px] pb-6 min-[900px]:pb-10"> Need something? <br /> The IPV Squad is <br /> here to help!! </h1>
                                 {headerInfo && headerInfo.map((item, index) => (
                                     <div key={index} className="flex items-start gap-4 py-4">
                                         {item.icon}
